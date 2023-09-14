@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP U </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"><img src="images/logo (2).png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()" ></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="course.html">COURSE</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      
+        <h1>LOGIN/REGISTER</h1>
+        
+    </section>
+    
+  
+    
+            <div id='login-form'class='login-page'>
+                <div class="form-box">
+                    <div class='button-box'>
+                        <div id='btn'></div>
+                        <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                        <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                    </div>
+                    <form id='login' class='input-group-login'>
+                        <input type='text'class='input-field'placeholder='Email Id' required >
+                <input type='password'class='input-field'placeholder='Enter Password' required>
+                <input type='checkbox'class='check-box'><span>Remember Password</span>
+                <button type='submit'class='submit-btn'>Log in</button>
+             </form>
+             <form id='register' class='input-group-register'>
+                 <input type='text'class='input-field'placeholder='First Name' required>
+                 <input type='text'class='input-field'placeholder='Last Name ' required>
+                 <input type='email'class='input-field'placeholder='Email Id' required>
+                 <input type='password'class='input-field'placeholder='Enter Password' required>
+                 <input type='password'class='input-field'placeholder='Confirm Password'  required>
+                 <input type='checkbox'class='check-box'><span>I agree to the terms and                                                   conditions</span>
+                        <button type='submit'class='submit-btn'>Register</button>
+                 </form>
+                </div>
+            </div>
+        </div>
+
+        <!-------------footer-->
+ <section class="footer">
+    <h4>ABOUT US</h4>
+    <p>We are the students of Kamla Nehru Institute of Technology.<br> We are driven to help other students of our college through this website.</p>
+   
+   <div class="icons">
+    <a href="https://www.linkedin.com/in/prateek-sethi-78944622b"><i class="fa-brands fa-linkedin"></i></a>
+   <p>Made with <i class="fa fa-heart-o"></i> by Shreyansh,Shailendra,Prateek,Kuldeep</p>
+   </section>
+        
+        <script>
+            var x=document.getElementById('login');
+            var y=document.getElementById('register');
+            var z=document.getElementById('btn');
+            function register()
+            {
+                x.style.left='-400px';
+                y.style.left='50px';
+                z.style.left='110px';
+            }
+            function login()
+            {
+                x.style.left='50px';
+                y.style.left='450px';
+                z.style.left='0px';
+            }
+        </script>
+        <script>
+            var modal = document.getElementById('login-form');
+            window.onclick = function(event) 
+            {
+                if (event.target == modal) 
+                {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+    </html>
+
+ 
+
+
+
+
+   

@@ -1,0 +1,11 @@
+.button2{
+    margin-left: 1175px;
+    margin-top: -20px;
+    height: 30px;
+    width: 70px;
+    background-color: rgb(225, 205, 130);
+    color: black;
+    z-index: 100;
+    border-radius: 5px;
+    border-color: white;
+}

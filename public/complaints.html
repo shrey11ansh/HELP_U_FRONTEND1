@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP U </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/abfa6e62cb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"><img src="images/logo (2).png"></a>
+        <div class="nav-links" id="navLinks">
+           
+            <ul>
+                <b> <li><a href="index.html">HOME</a></li>
+                
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li></b>
+            </ul>
+        </div>
+        
+      </nav>
+      
+        <h1>COMPLAINTS</h1>
+        
+    </section>
+    <section class="complaint-box"></section>
+    <div class="complaint-box">
+        <h3>File a complaint</h3>
+        <!-- <form class ="complaint-form" id="myForm">
+            <input type="text" placeholder="Enter Name">
+            <input type="email" placeholder="Enter Email">
+            <textarea rows="5" placeholder="Your Complaint"></textarea>
+            <button type="submit" class="hero-btn red-btn">POST COMPLAINT</button>
+        </form> -->
+
+        <form id="myForm" class="complaint-form">
+            <label for="name">Send me your name:</label>
+            <input id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input id="email" name="email" required>
+            <br>
+            <label for="complaints">Complaints</label>
+            <input id="complaints" name="complaints"required>
+            <br>
+            <input id="postSubmit" type="submit" class="hero-btn red-btn" value="Send Me!">
+        
+        </form>
+
+    </div>
+    
+   
+    
+  
+   
+
+ <!-------------footer-->
+ <section class="footer">
+    <h4>ABOUT US</h4>
+    <p>We are the students of Kamla Nehru Institute of Technology.<br> We are driven to help other students of our college through this website.</p>
+   
+   <div class="icons">
+    <a href="https://www.linkedin.com/in/prateek-sethi-78944622b"><i class="fa-brands fa-linkedin"></i></a>
+   </div>
+   <p>Made with <i class="fa fa-heart-o"></i> by Shreyansh,Shailendra,Prateek,Kuldeep</p>
+   <div class="btn">
+    <a class="gotopbtn"href="#"><i class="fas fa-arrow-up"></i></a>
+   </div>
+   </section>
+   <script>
+
+    const thisForm = document.getElementById('myForm');
+    thisForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(thisForm).entries()
+        const response = await fetch('https://help-u-backend.onrender.com/students', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(Object.fromEntries(formData))
+            
+        });
+        
+        
+        const result = await response.json();
+        alert("Submitted");
+
+        console.log(result)
+    });
+</script>
+
+
+
+    <!--------javascript for toggle menu-------->
+    <script>
+        var navLinks= document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right ="0";
+            function hideMenu(){
+            navLinks.style.right ="-200px";
+        }
+        }
+    </script>
+</body>
+</html>

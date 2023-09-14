@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data from Server</title>
+</head>
+<body>
+    
+    <table id="data">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Complaints</th>
+        </tr>
+    </table>
+
+    <script>
+        async function getData() {
+            // Make a GET request to the server
+            let response = await fetch("http://localhost:5000/", { 
+                method: "GET"
+            });
+
+            // Get the response as a JSON object
+            let data = await response.json();
+
+            // Get the table element
+            const table = document.getElementById("data");
+
+            // Loop through the data array
+            for (const item of data) {
+                // Create a new row for each item
+                const row = table.insertRow();
+
+                // Insert cells for each piece of data
+                const idCell = row.insertCell();
+                const nameCell = row.insertCell();
+                const emailCell = row.insertCell();
+                const complaintsCell = row.insertCell();
+
+                // Set the cell contents to the corresponding data values
+                idCell.innerHTML = item._id;
+                nameCell.innerHTML = item.name;
+                emailCell.innerHTML = item.email;
+                complaintsCell.innerHTML = item.complaints;
+            }
+        }
+
+        // Call the getData function when the page loads
+        getData();
+    </script>
+
+</body>
+</html>
